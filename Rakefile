@@ -293,7 +293,7 @@ begin
             platform = target.platform_name
             case platform
             when :osx
-              execute_command "xcodebuild -workspace '#{workspace_path}' -scheme '#{scheme_name}' clean build"
+              execute_command "xcodebuild -workspace '#{workspace_path}' -scheme '#{scheme_name}' clean build SWIFT_VERSION=4"
             when :ios
               test_flag = (scheme_name.start_with? 'Test') ? 'test' : ''
 
